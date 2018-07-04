@@ -9,7 +9,8 @@
     "request": "^2.87.0"
   },
   "scripts": {
-    "start": "parcel src/index.html --public-url /"
+    "start": "parcel src/index.html --public-url /",
+    "deploy": "parcel build src/index.html && aws s3 sync --acl public-read --sse --delete ./dist s3://www.sturmgruppe-granit.com"
   },
   "devDependencies": {
     "eslint": "^5.0.1",
