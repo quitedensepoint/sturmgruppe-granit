@@ -12,6 +12,7 @@
     "start": "parcel src/index.html --public-url /"
   },
   "devDependencies": {
+    "eslint": "^5.0.1",
     "eslint-config-google": "^0.9.1",
     "node-sass": "^4.9.0",
     "parcel-plugin-clean-dist": "^0.0.6"
