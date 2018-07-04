@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif');
+@font-face {
+    font-family: 'Potsdam';
+    src: url('./Potsdam.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@import '../_colors.scss';
+
+@mixin cardStatic() {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+@mixin cardHover() {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@mixin textShadow() {
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+#root {
+
+    .page {
+        .background {
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: -1;
+          
+            display: block;
+            background-image: url('./background.jpg');
+            width: 100%;
+            height: 100%;
+          
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+          }
+    }
+
+    color: $darkColor;
+    font-family: 'Noto Sans', sans-serif;
+
+    a:link {
+        color: $accentColor;
+    }
+
+    a:visited {
+        color: $accentColor
+    }
+
+    a:hover {
+        color: $accentColor;
+    }
+
+    a:active {
+        color: $accentColor;
+    }
+
+    .clanTitle {
+        font-family: 'Potsdam', serif;
+    }
+
+    .header {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+
+        .clock {
+            grid-column: 3;
+            grid-row: 1;
+            text-align: center;
+            font-family: 'Potsdam', serif;
+            font-size: 2rem;
+            position: relative;
+            @include textShadow();
+
+            .text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .logo {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: center;
+
+            img {
+                height: 100%;
+                margin: auto;
+            }
+        }
+
+        .clanTitle {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: center;
+            @include textShadow();
+            font-size: 5rem;
+            margin: 0;
+        }
+    }
+
+    .panelContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .panel {
+        margin: 2rem;
+        padding: 1rem;
+        border: 1px solid rgba(0,0,0, 0.3);
+        @include cardStatic();
+    }
+
+    .panel:hover {
+        @include cardHover();
+    }
+
+    .panel:nth-of-type(1) {
+        background-color: $accentColor;
+        color: $lightColor;
+    }
+
+    .panel:nth-of-type(2) {
+        background-color: $lightColor;
+        color: $darkColor;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .panel:last-of-type {
+        background-color: $darkColor;
+        color: $lightColor;
+        padding: 0;
+    }
+}

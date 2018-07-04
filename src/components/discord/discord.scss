@@ -1,0 +1,42 @@
+.discord {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr;
+
+    .title {
+        grid-row: 1;
+        grid-column: 1;
+        text-align: center;
+        margin: auto;
+
+        a {
+            text-decoration: none;
+        }
+
+        border-bottom: 1px solid #cccccc;
+        width: 100%;
+    }
+
+    .feed {
+        grid-column: 1;
+        grid-row: 2;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+
+        ul {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            position: absolute;
+            width: 100%;
+        }
+
+        li {
+            display: block;
+            border-bottom: 1px solid #cccccc;
+            padding: 1rem;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.membersList {
+
+    padding: 0;
+
+    .member {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 60px 1fr;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .avatar {
+            grid-row: 1;
+            grid-column: 1;
+
+            img {
+                margin: 0;
+                border-radius: 100%;
+            }
+        }
+
+        .text {
+            grid-row: 1;
+            grid-column: 2;
+            width: 100%;
+            padding-left: 1rem;
+
+            .nickname {
+                clear: both;
+            }
+
+            .status {
+                clear: both;
+            }
+        }
+    }
+}

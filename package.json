@@ -1,0 +1,19 @@
+{
+  "name": "sturmgruppe-granit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "request": "^2.87.0"
+  },
+  "scripts": {
+    "start": "parcel src/index.html --public-url /"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1",
+    "node-sass": "^4.9.0",
+    "parcel-plugin-clean-dist": "^0.0.6"
+  }
+}

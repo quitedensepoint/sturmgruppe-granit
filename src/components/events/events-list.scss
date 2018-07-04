@@ -1,0 +1,17 @@
+.event {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 1;
+
+    .date {
+        grid-column: 1;
+    }
+
+    .title {
+        grid-column: 2;
+    }
+
+    .export {
+        grid-column: 3;
+    }
+}

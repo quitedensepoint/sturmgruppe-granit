@@ -1,0 +1,28 @@
+.post {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 60px auto;
+    grid-template-rows: 1fr;
+
+    .avatar {
+        border-radius: 100%;
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0;
+    }
+
+    .text {
+        grid-column: 2;
+        grid-row: 1;
+        padding-left: 1rem;
+
+        .meta {
+            clear: both;
+            opacity: 0.75;
+        }
+
+        .content {
+            margin-top: 1rem;
+        }
+    }
+}
