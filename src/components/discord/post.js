@@ -1,21 +1,23 @@
 import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
 
 import './post.scss';
 
 class Post extends React.Component {
     constructor(props) {
         super(props);
+        console.log(props);
     }
 
     render() {
         return (
-            <div className="post">
-                <img className="avatar" src={this.props.data.user.avatarLink} />
-                <div className="text">
-                    <span className="meta">{this.props.data.user.name} • {this.props.data.time}</span>
-                    <div className="content">{this.props.data.content}</div>
-                </div>
-            </div>
+            <ListItem key={this.props.data.id}>
+                <ListItemAvatar children={<Avatar src={this.props.data.user.avatarLink}/>} />
+                <ListItemText primary={this.props.data.content} secondary={`${this.props.data.user.name} • ${this.props.data.time}`}/>
+            </ListItem>
         );
     }
 }
